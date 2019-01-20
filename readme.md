@@ -2,26 +2,11 @@
 
 Laravel is a web application framework with expressive, elegant syntax. It's one of the most popular PHP frameworks today.
 
-Laraish brings the Laravel Framework into WordPress, which allow us to have all the benefits of Laravel. So you can create themes with less effort, more enjoyment!
+laraveltheme brings the Laravel Framework into WordPress, which allow us to have all the benefits of Laravel. So you can create themes with less effort, more enjoyment!
 
 
 ## Requirement
-
-The 99% of Laraish is just the regular full stack PHP Framework [Laravel](https://laravel.com/). So if you have never heard of it, you're going to want to take a look at it before you can go any further.
-
-For those who are already familiar with Laravel, it should be a piece of cake for you to get started with Laraish.
-
-
-## What Laraish is and is not
-
-**Laraish is not a framework for general purpose WordPress theme development.**
-
-Yes, it is a framework but not for general WordPress theme development. Laraish is aimed at helping create "homemade theme" rather than general purpose theme. So if you want to create themes with a bunch of theme options for sales or just for free distribution, you probably want to take a look at the following frameworks instead.
-
-* [Piklist](https://piklist.com/product/piklist/)
-* [Gantry](http://gantry.org/)
-* [Unyson](http://unyson.io/)
-
+php 7.2
 
 ## What's the diffrence between the original Laravel?
 
@@ -31,16 +16,22 @@ I'd say almost no differences there, except some additional tweaking, which gets
 # Get Started
 
 ## Installation
+copy files inside empty folder in wordpress wp-content/themes
 
-You can install Laraish by issuing the following command via [Composer](https://getcomposer.org/).
-`composer create-project --prefer-dist laraish/laraish <theme-name>`
+and before you active the theme open your cmd and install composer
 
-Note that **the MySQL server and the web server must be running before you can issue the `composer create-project` command** to install Laraish. Because after Composer finishes the installation, it's going to run an artisan command, which requires MySQL server and the web server that host the WordPress be running at the time you issuing the command.
+ex : cd wp-content\themes\laraveltheme-master
+
+and run this command > composer install
+
+then activate the theme
+
+Note that **the MySQL server and the web server must be running before you can issue the `composer create-project` command** to install laraveltheme. Because after Composer finishes the installation, it's going to run an artisan command, which requires MySQL server and the web server that host the WordPress be running at the time you issuing the command.
 
 Also, notice that if you are on Mac and use MAMP or similar application to create your local server environment you may need to change your `$PATH` environment variable to make Composer use the PHP binary that MAMP provides rather than the OS's built-in PHP binary.
 
 ## Routing
-Laraish replaced the original `UriValidator`(`Illuminate\Routing\Matching\UriValidator`) with its own one to allow you to specify WordPress specific routes, like "archive" or "page" or "custom post type" ex.
+laraveltheme replaced the original `UriValidator`(`Illuminate\Routing\Matching\UriValidator`) with its own one to allow you to specify WordPress specific routes, like "archive" or "page" or "custom post type" ex.
 
 To define a WordPress specific route, just by providing a "page type" as the first argument.
 
@@ -110,7 +101,7 @@ Route::get('/my/endpoint', function () {
 ```
 
 ## Models
-Laraish comes with some general purpose models like `Post` or `Term` model. Note that they are not an implementation of ORM like the Laravel's Eloquent Model. They are just a simple wrapper for WordPress's APIs that encapsulate some common logic to help you simplify your business logic. 
+laraveltheme comes with some general purpose models like `Post` or `Term` model. Note that they are not an implementation of ORM like the Laravel's Eloquent Model. They are just a simple wrapper for WordPress's APIs that encapsulate some common logic to help you simplify your business logic. 
 
 You can find those models in `Laraish\WpSupport\Model`. Because the `Post` model is the most frequently used model, for convenience, a `Post` Class that extends the `Laraish\WpSupport\Model\Post` has brought to your `app/Models` directory already.
 
@@ -172,7 +163,7 @@ Take a look at [Laraish\WpSupport\Model](https://github.com/laraish/framework/tr
 
 
 ## The `@loop` blade directive
-Laraish also added a `@loop` blade directive for simplifying "[The Loop](https://codex.wordpress.org/The_Loop)" in WordPress.
+laraveltheme also added a `@loop` blade directive for simplifying "[The Loop](https://codex.wordpress.org/The_Loop)" in WordPress.
 
 for example:
 
